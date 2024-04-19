@@ -103,9 +103,8 @@ def post_align(f,nf="",sym_i="",sym_p="_",sym="?"):
     toPraat.toPraat(nf,trans)                               # save TextGrid
 def ph_praat(aud_path,tgd_path,ph_path,sym_t,sym_i):
     """Calls the Praat script."""
-    pr_d = os.path.abspath(os.path.join(PH_HOME,"script_anonym"))
     subprocess.run([os.path.join(pr_d,"Praat.exe"),'--new-send',
-                    os.path.join(pr_d,"ph_ofrom.praat"),aud_path,tgd_path,
+                    os.path.join(PH_HOME,"ph_ofrom.praat"),aud_path,tgd_path,
                     ph_path,sym_t,sym_i,"1"])
 def find_pairs(d,nd,ad="",aud_ext=".wav"):
     """Generator for pairs of TextGrids and their audio file.
